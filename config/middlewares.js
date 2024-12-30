@@ -7,7 +7,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'http:', 'https:', 'http://localhost:1337'], // Include API domain
+          'connect-src': ["'self'", 'http:', 'https:', 'https://timesme.vercel.app'], // Include API domain
           'img-src': ["'self'", 'data:', 'blob:', 'http:', 'https:'], // Support all necessary sources
           'media-src': ["'self'", 'data:', 'blob:', 'http:', 'https:'],
           upgradeInsecureRequests: null, // Allow non-HTTPS requests if needed
@@ -18,7 +18,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:5173'], // Add your frontend's URL here
+      origin: ['https://timesme.vercel.app'], // Add your frontend's URL here
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Ensure DELETE method is included
       headers: ['Content-Type', 'Authorization'], // Include Authorization for secured APIs
     },
