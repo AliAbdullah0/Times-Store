@@ -7,7 +7,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'http:', 'https:', 'https://timesme.vercel.app'], // Include API domain
+          'connect-src': ["'self'", 'http:', 'https:', 'https://times-store-production.up.railway.app/'], // Include API domain
           'img-src': ["'self'", 'data:', 'blob:', 'http:', 'https:'], // Support all necessary sources
           'media-src': ["'self'", 'data:', 'blob:', 'http:', 'https:'],
           upgradeInsecureRequests: null, // Allow non-HTTPS requests if needed
