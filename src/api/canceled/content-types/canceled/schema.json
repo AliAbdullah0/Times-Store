@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "canceleds",
+  "info": {
+    "singularName": "canceled",
+    "pluralName": "canceleds",
+    "displayName": "Canceled",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Product": {
+      "type": "string"
+    },
+    "OrderId": {
+      "type": "integer"
+    },
+    "OrderedOn": {
+      "type": "datetime"
+    },
+    "CanceledOn": {
+      "type": "datetime"
+    },
+    "OrderedBy": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "string"
+    }
+  }
+}

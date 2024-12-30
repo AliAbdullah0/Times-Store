@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
-    "moduleResolution": "nodenext",
-    "target": "ES2021",
-    "checkJs": true,
-    "allowJs": true
-  }
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2020", // Ensures compatibility with modern JavaScript syntax
+    "allowSyntheticDefaultImports": true, // Optional for CommonJS/ESM compatibility
+    "baseUrl": ".", // Allows relative imports from the project root
+    "paths": {
+      "@/*": ["./*"] // Optional: Aliases for cleaner imports
+    }
+  },
+  "include": ["./src/**/*", "./config/**/*"], // Include Strapi-related directories
+  "exclude": ["node_modules", "build"]
 }

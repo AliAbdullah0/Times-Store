@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clothes",
+  "info": {
+    "singularName": "clothe",
+    "pluralName": "clothes",
+    "displayName": "Clothes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}
