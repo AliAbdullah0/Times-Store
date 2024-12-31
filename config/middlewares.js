@@ -18,7 +18,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://timesme.vercel.app'], // Add your frontend's URL here
+      origin: ['https://zentime.vercel.app'], // Add your frontend's URL here
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Ensure DELETE method is included
       headers: ['Content-Type', 'Authorization'], // Include Authorization for secured APIs
     },
