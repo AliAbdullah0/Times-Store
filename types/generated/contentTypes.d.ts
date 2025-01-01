@@ -534,6 +534,39 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSmartwatcheSmartwatche extends Struct.CollectionTypeSchema {
+  collectionName: 'smartwatches';
+  info: {
+    displayName: 'Smartwatches';
+    pluralName: 'smartwatches';
+    singularName: 'smartwatche';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::smartwatche.smartwatche'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    stock: Schema.Attribute.Integer;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTrendingTrending extends Struct.CollectionTypeSchema {
   collectionName: 'trendings';
   info: {
@@ -561,6 +594,36 @@ export interface ApiTrendingTrending extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWomenWomen extends Struct.CollectionTypeSchema {
+  collectionName: 'womens';
+  info: {
+    displayName: 'Women';
+    pluralName: 'womens';
+    singularName: 'women';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::women.women'> &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    stock: Schema.Attribute.Integer;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1082,7 +1145,9 @@ declare module '@strapi/strapi' {
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
+      'api::smartwatche.smartwatche': ApiSmartwatcheSmartwatche;
       'api::trending.trending': ApiTrendingTrending;
+      'api::women.women': ApiWomenWomen;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

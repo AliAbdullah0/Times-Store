@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "smartwatches",
+  "info": {
+    "singularName": "smartwatche",
+    "pluralName": "smartwatches",
+    "displayName": "Smartwatches"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

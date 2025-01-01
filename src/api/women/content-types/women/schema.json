@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "womens",
+  "info": {
+    "singularName": "women",
+    "pluralName": "womens",
+    "displayName": "Women"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

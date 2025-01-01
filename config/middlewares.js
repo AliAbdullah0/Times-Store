@@ -8,9 +8,9 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'http:', 'https:', 'https://times-store-production.up.railway.app/api'], // Include API domain
-          'img-src': ["'self'", 'data:', 'blob:', 'http:', 'https:'], // Support all necessary sources
+          'img-src': ["'self'", 'data:', 'blob:', 'http:', 'https:'],
           'media-src': ["'self'", 'data:', 'blob:', 'http:', 'https:'],
-          upgradeInsecureRequests: null, // Allow non-HTTPS requests if needed
+          upgradeInsecureRequests: null, 
         },
       },
     },
@@ -18,7 +18,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://zentime.vercel.app'], // Add your frontend's URL here
+      origin: ['https://zentime.vercel.app'], 
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Ensure DELETE method is included
       headers: ['Content-Type', 'Authorization'], // Include Authorization for secured APIs
     },
