@@ -4,23 +4,36 @@
   "info": {
     "singularName": "cart-checkout",
     "pluralName": "cartcheckouts",
-    "displayName": "CartCheckout"
+    "displayName": "CartCheckout",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
+    "Products": {
+      "type": "text",
       "required": true
     },
-    "price": {
-      "type": "float",
+    "Phone": {
+      "type": "biginteger",
       "required": true
     },
     "TotalPrice": {
       "type": "decimal",
+      "required": true
+    },
+    "Address": {
+      "type": "text",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "text",
       "required": true
     }
   }

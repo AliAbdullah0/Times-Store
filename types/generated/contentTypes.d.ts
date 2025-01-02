@@ -408,6 +408,7 @@ export interface ApiCartCheckoutCartCheckout
   extends Struct.CollectionTypeSchema {
   collectionName: 'cartcheckouts';
   info: {
+    description: '';
     displayName: 'CartCheckout';
     pluralName: 'cartcheckouts';
     singularName: 'cart-checkout';
@@ -416,18 +417,21 @@ export interface ApiCartCheckoutCartCheckout
     draftAndPublish: true;
   };
   attributes: {
+    Address: Schema.Attribute.Text & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Email: Schema.Attribute.Text & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::cart-checkout.cart-checkout'
     > &
       Schema.Attribute.Private;
-    price: Schema.Attribute.Float & Schema.Attribute.Required;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    Phone: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    Products: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
     TotalPrice: Schema.Attribute.Decimal & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
