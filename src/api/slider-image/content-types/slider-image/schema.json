@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sliderimages",
+  "info": {
+    "singularName": "slider-image",
+    "pluralName": "sliderimages",
+    "displayName": "SliderImages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

@@ -534,6 +534,38 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSliderImageSliderImage extends Struct.CollectionTypeSchema {
+  collectionName: 'sliderimages';
+  info: {
+    displayName: 'SliderImages';
+    pluralName: 'sliderimages';
+    singularName: 'slider-image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::slider-image.slider-image'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSmartwatcheSmartwatche extends Struct.CollectionTypeSchema {
   collectionName: 'smartwatches';
   info: {
@@ -1145,6 +1177,7 @@ declare module '@strapi/strapi' {
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
+      'api::slider-image.slider-image': ApiSliderImageSliderImage;
       'api::smartwatche.smartwatche': ApiSmartwatcheSmartwatche;
       'api::trending.trending': ApiTrendingTrending;
       'api::women.women': ApiWomenWomen;
