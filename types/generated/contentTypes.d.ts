@@ -534,9 +534,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSliderImageSliderImage extends Struct.CollectionTypeSchema {
+export interface ApiSliderImageSliderImage extends Struct.SingleTypeSchema {
   collectionName: 'sliderimages';
   info: {
+    description: '';
     displayName: 'SliderImages';
     pluralName: 'sliderimages';
     singularName: 'slider-image';
