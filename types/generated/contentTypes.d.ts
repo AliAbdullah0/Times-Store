@@ -404,6 +404,37 @@ export interface ApiCanceledCanceled extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCartCheckoutCartCheckout
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'cartcheckouts';
+  info: {
+    displayName: 'CartCheckout';
+    pluralName: 'cartcheckouts';
+    singularName: 'cart-checkout';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cart-checkout.cart-checkout'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Float & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    TotalPrice: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiClotheClothe extends Struct.CollectionTypeSchema {
   collectionName: 'clothes';
   info: {
@@ -1174,6 +1205,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::canceled.canceled': ApiCanceledCanceled;
+      'api::cart-checkout.cart-checkout': ApiCartCheckoutCartCheckout;
       'api::clothe.clothe': ApiClotheClothe;
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::order.order': ApiOrderOrder;
